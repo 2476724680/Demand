@@ -1,15 +1,15 @@
 package Test01;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Test2 {
 
-    void add(List<String> list) throws Exception {
+    void deleteAndAdd(List<String> list) throws Exception {
 
-        RandomAccessFile raf=new RandomAccessFile(new File("DecisionTreeConstant.java").getAbsoluteFile(),"rw");
+        RandomAccessFile raf=null;
         try {
+            raf=new RandomAccessFile(new File("DecisionTreeConstant.java").getAbsoluteFile(),"rw");
             long length = raf.length();
             raf.seek(length-1);
             for (String l : list) {
