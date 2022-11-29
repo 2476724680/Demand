@@ -1,7 +1,6 @@
 package Test01;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,7 +27,6 @@ public class Test1 {
                     {
                         if (count == 0)
                         {
-                            System.out.println("1");
                             ps.write(fT.toCharArray());
                             count++;
                         } else
@@ -37,10 +35,11 @@ public class Test1 {
                         }
                     }
                 }
-                if (ps != null) ps.close();
+                ps.flush();
             }
         } finally {
             if (br != null) br.close();
+            if (ps != null) ps.close();
         }
 
     }
